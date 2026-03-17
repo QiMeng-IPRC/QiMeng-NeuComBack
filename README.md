@@ -12,8 +12,7 @@
 - `clang`
 - `clang++`
 - `opt`
-- Slurm: `sbatch`, `squeue`, `scancel`
-
+- `Slurm`
 其中：
 
 - 运行 `Level1` / `Level2` 测试需要 `clang`、`clang++`、Slurm
