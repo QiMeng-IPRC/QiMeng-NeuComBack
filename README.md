@@ -13,20 +13,6 @@
 - `clang++`
 - `opt`
 - `Slurm`
-其中：
-
-- 运行 `Level1` / `Level2` 测试需要 `clang`、`clang++`、Slurm
-- 重新生成 `Level2/task_ir_O0`、`Level2/task_ir_O3` 需要 `opt`
-- 重新测量 `Level2/newTSVC/standard_params_IR.json` 也需要 `clang`
-
-可以先确认命令是否存在：
-
-```bash
-clang --version
-clang++ --version
-opt --version
-sbatch --version
-```
 
 ## API Key
 
