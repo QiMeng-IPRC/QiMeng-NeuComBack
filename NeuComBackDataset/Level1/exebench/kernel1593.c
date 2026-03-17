@@ -1,0 +1,17 @@
+#define NULL ((void *)0)
+typedef unsigned long size_t; // Customize by platform.
+typedef long intptr_t;
+typedef unsigned long uintptr_t;
+typedef long scalar_t__; // Either arithmetic or pointer type.
+/* By default, we understand bool (as a convenience). */
+
+/* Forward declarations */
+
+/* Type definitions */
+struct rcar_du_group {
+  int /*<<< orphan*/ use_count;
+};
+
+/* Variables and functions */
+
+void rcar_du_group_put(struct rcar_du_group *rgrp) { --rgrp->use_count; }

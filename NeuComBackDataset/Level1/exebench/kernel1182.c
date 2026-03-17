@@ -1,0 +1,18 @@
+#define NULL ((void *)0)
+typedef unsigned long size_t; // Customize by platform.
+typedef long intptr_t;
+typedef unsigned long uintptr_t;
+typedef long scalar_t__; // Either arithmetic or pointer type.
+/* By default, we understand bool (as a convenience). */
+
+/* Forward declarations */
+
+/* Type definitions */
+typedef int /*<<< orphan*/ wpa_msg_get_ifname_func;
+
+/* Variables and functions */
+int /*<<< orphan*/ wpa_msg_ifname_cb;
+
+void wpa_msg_register_ifname_cb(wpa_msg_get_ifname_func func) {
+  wpa_msg_ifname_cb = func;
+}

@@ -1,0 +1,1 @@
+{"USART_ClockInitStruct": {"USART_CPHA": 100, "USART_LastBit": 76, "USART_CPOL": 44, "USART_Clock": 79}, "USART_CPHA_1Edge": 126, "USART_CPOL_Low": 35, "USART_Clock_Disable": 15, "USART_LastBit_Disable": 98}

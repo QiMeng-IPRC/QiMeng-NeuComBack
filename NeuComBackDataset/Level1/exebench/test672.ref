@@ -1,0 +1,1 @@
+{"accum": {"idle": 111, "iowait": 218, "irq": 115, "nice": 152, "softirq": 178, "sys": 162, "user": 133}, "current": {"idle": 46, "iowait": 122, "irq": 105, "nice": 91, "softirq": 99, "sys": 99, "user": 95}}

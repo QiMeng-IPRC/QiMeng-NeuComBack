@@ -1,0 +1,1 @@
+{"BRKINT": 54, "CS8": 10, "CSIZE": 111, "ECHO": 6, "ECHONL": 12, "ICANON": 116, "ICRNL": 14, "IEXTEN": 106, "IGNBRK": 101, "IGNCR": 101, "INLCR": 84, "ISIG": 83, "ISTRIP": 80, "IXON": 104, "OPOST": 118, "PARENB": 60, "PARMRK": 121, "tiosp": {"c_cflag": 10, "c_iflag": 0, "c_lflag": 0, "c_oflag": 9}}

@@ -1,0 +1,1 @@
+{"USART_HardwareFlowControl_None": 56, "USART_InitStruct": {"USART_BaudRate": 9600, "USART_HardwareFlowControl": 56, "USART_Mode": 38, "USART_Parity": 62, "USART_StopBits": 45, "USART_WordLength": 122}, "USART_Mode_Rx": 36, "USART_Mode_Tx": 38, "USART_Parity_No": 62, "USART_StopBits_1": 45, "USART_WordLength_8b": 122}

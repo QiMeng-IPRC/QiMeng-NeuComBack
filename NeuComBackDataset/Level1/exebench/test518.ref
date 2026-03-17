@@ -1,0 +1,1 @@
+{"STATE_Tieline_reset": 58, "me": {"Pi": 3.14159, "StepSize": 0.1, "T0": 0.0707, "_state": 58, "_trigger": 1, "inputEvents": {"event": {"DfChange": 0, "Tick": 0}}, "outputEvents": {"event": {"Dp12Change": 0}}}, "returnv": 0}

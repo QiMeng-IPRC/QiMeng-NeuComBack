@@ -1,0 +1,1 @@
+{"BRKINT": 85, "CS8": 110, "CSIZE": 115, "ECHO": 17, "ECHONL": 81, "ICANON": 100, "ICRNL": 3, "IEXTEN": 94, "IGNBRK": 23, "IGNCR": 78, "INLCR": 121, "ISIG": 96, "ISTRIP": 86, "IXON": 34, "OPOST": 54, "PARENB": 39, "PARMRK": 70, "termios_p": {"c_cflag": 110, "c_iflag": 0, "c_lflag": 0, "c_oflag": 64}}

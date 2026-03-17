@@ -1,0 +1,1 @@
+{"ex": {"rkey": 15, "qpn": 107, "qp_rd_atom": 69, "vaddr": 123, "psn": 95, "mtu": 105, "lid": 61, "gid": 78}, "conn": {"r_vaddr": 9, "r_rkey": 59, "r_qp_rd_atom": 103, "r_mtu": 85, "r_lid": 66, "r_qpn": 76, "r_gid": 16, "r_psn": 29}}

@@ -1,0 +1,1 @@
+{"functionConstraint": {"minBaudRate": 84, "maxBaudRate": 11, "requiredSerialPortFeatures": 7}, "SPF_SUPPORTS_CALLBACK": 66, "SPF_SUPPORTS_SBUS_MODE": 59}

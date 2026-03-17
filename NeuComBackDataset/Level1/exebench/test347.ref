@@ -1,0 +1,1 @@
+{"a": {"act8b": 8, "active": 72, "cyc8b": 31, "cycle": 107, "rec8b": 33, "recover": 37, "setup": 51, "udma": 43}, "b": {"act8b": 13, "active": 2, "cyc8b": 23, "cycle": 115, "rec8b": 3, "recover": 23, "setup": 45, "udma": 126}, "m": {"act8b": 60, "active": 3, "cyc8b": 31, "cycle": 47, "rec8b": 33, "recover": 37, "setup": 51, "udma": 126}}

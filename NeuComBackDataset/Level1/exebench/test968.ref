@@ -1,0 +1,1 @@
+{"uint8_even_parity": [2, 71, 52, 70, 19, 19, 100, 47, 18, 32, 69, 115, 59, 88, 33, 54, 56, 5, 112, 30, 49, 55, 21, 51, 116, 27, 23, 6, 19, 34, 20, 15], "used_cycles": 90, "z80_state": {"a": 855, "flag_carry": 0, "flag_half": 0, "flag_parity_overflow": 0, "flag_sign": 6, "flag_sub": 0, "flag_zero": 0, "h": 839}}

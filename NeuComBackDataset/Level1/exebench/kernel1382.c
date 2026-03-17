@@ -1,0 +1,22 @@
+#define NULL ((void *)0)
+typedef unsigned long size_t; // Customize by platform.
+typedef long intptr_t;
+typedef unsigned long uintptr_t;
+typedef long scalar_t__; // Either arithmetic or pointer type.
+/* By default, we understand bool (as a convenience). */
+
+/* Forward declarations */
+
+/* Type definitions */
+typedef size_t BYTE;
+
+/* Variables and functions */
+size_t *sbox_table;
+
+void SubBytes(BYTE *in, BYTE *out) {
+  int i;
+
+  for (i = 0; i < 16; i++) {
+    out[i] = sbox_table[in[i]];
+  }
+}

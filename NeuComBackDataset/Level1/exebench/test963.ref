@@ -1,0 +1,1 @@
+{"LIGHTTPD_VERSION_ID": 70, "mod_redirect_free": 58, "mod_redirect_init": 66, "mod_redirect_set_defaults": 79, "mod_redirect_uri_handler": 75, "p": {"cleanup": 58, "handle_uri_clean": 75, "init": 66, "name": "redirect", "set_defaults": 79, "version": 70}, "returnv": 0}

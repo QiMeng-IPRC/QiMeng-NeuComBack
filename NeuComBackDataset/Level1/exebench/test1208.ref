@@ -1,0 +1,1 @@
+{"AR8X16_MAX_VLANS": 3, "ETHERSWITCH_VLAN_DOT1Q": 18, "ETHERSWITCH_VLAN_DOUBLE_TAG": 72, "ETHERSWITCH_VLAN_PORT": 120, "ar8316_hw_global_setup": 76, "ar8316_hw_setup": 101, "sc": {"hal": {"arswitch_hw_global_setup": 76, "arswitch_hw_setup": 101}, "info": {"es_nvlangroups": 3, "es_vlan_caps": 122}}}

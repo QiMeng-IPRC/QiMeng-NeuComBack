@@ -1,0 +1,27 @@
+#define NULL ((void *)0)
+typedef unsigned long size_t; // Customize by platform.
+typedef long intptr_t;
+typedef unsigned long uintptr_t;
+typedef long scalar_t__; // Either arithmetic or pointer type.
+/* By default, we understand bool (as a convenience). */
+
+/* Forward declarations */
+
+/* Type definitions */
+
+/* Variables and functions */
+int /*<<< orphan*/ SIGUSR1;
+int /*<<< orphan*/
+getpid();
+int /*<<< orphan*/
+kill(int /*<<< orphan*/, int /*<<< orphan*/);
+int /*<<< orphan*/ nr_tests;
+scalar_t__ trapped;
+
+void check_trapped(void) {
+  if (!trapped)
+    kill(getpid(), SIGUSR1);
+  trapped = 0;
+
+  nr_tests++;
+}

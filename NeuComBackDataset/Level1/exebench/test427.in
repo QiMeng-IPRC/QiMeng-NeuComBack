@@ -1,0 +1,1 @@
+{"GPIO_InitStruct": {"GPIO_Pin": 112, "GPIO_PuPd": 88, "GPIO_OType": 45, "GPIO_Mode": 20, "GPIO_Speed": 48}, "GPIO_Mode_IN": 25, "GPIO_OType_PP": 117, "GPIO_Pin_All": 121, "GPIO_PuPd_NOPULL": 16, "GPIO_Speed_Level_2": 25}

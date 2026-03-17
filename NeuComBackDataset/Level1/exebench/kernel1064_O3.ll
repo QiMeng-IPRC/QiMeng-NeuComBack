@@ -1,0 +1,56 @@
+; ModuleID = '../benchmarks/fine_grained/exebench/kernel1064.c'
+source_filename = "../benchmarks/fine_grained/exebench/kernel1064.c"
+target datalayout = "e-m:e-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
+target triple = "x86_64-unknown-linux-gnu"
+
+@charpos = dso_local local_unnamed_addr global i32 0, align 4
+@proglen = dso_local local_unnamed_addr global i32 0, align 4
+@prog = dso_local local_unnamed_addr global ptr null, align 8
+@ch = dso_local local_unnamed_addr global i32 0, align 4
+
+; Function Attrs: nounwind uwtable
+define dso_local void @Getchar() local_unnamed_addr #0 {
+  %1 = load i32, ptr @charpos, align 4, !tbaa !5
+  %2 = load i32, ptr @proglen, align 4, !tbaa !5
+  %3 = add nsw i32 %2, -1
+  %4 = icmp slt i32 %1, %3
+  br i1 %4, label %5, label %11
+
+5:                                                ; preds = %0
+  %6 = add nsw i32 %1, 1
+  store i32 %6, ptr @charpos, align 4, !tbaa !5
+  %7 = load ptr, ptr @prog, align 8, !tbaa !9
+  %8 = sext i32 %6 to i64
+  %9 = getelementptr inbounds i32, ptr %7, i64 %8
+  %10 = load i32, ptr %9, align 4, !tbaa !5
+  store i32 %10, ptr @ch, align 4, !tbaa !5
+  br label %13
+
+11:                                               ; preds = %0
+  %12 = tail call i32 @error(i32 noundef 1) #2
+  br label %13
+
+13:                                               ; preds = %11, %5
+  ret void
+}
+
+declare i32 @error(i32 noundef) local_unnamed_addr #1
+
+attributes #0 = { nounwind uwtable "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #1 = { "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="x86-64" "target-features"="+cmov,+cx8,+fxsr,+mmx,+sse,+sse2,+x87" "tune-cpu"="generic" }
+attributes #2 = { nounwind }
+
+!llvm.module.flags = !{!0, !1, !2, !3}
+!llvm.ident = !{!4}
+
+!0 = !{i32 1, !"wchar_size", i32 4}
+!1 = !{i32 8, !"PIC Level", i32 2}
+!2 = !{i32 7, !"PIE Level", i32 2}
+!3 = !{i32 7, !"uwtable", i32 2}
+!4 = !{!"clang version 17.0.6"}
+!5 = !{!6, !6, i64 0}
+!6 = !{!"int", !7, i64 0}
+!7 = !{!"omnipotent char", !8, i64 0}
+!8 = !{!"Simple C/C++ TBAA"}
+!9 = !{!10, !10, i64 0}
+!10 = !{!"any pointer", !7, i64 0}

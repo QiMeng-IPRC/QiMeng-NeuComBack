@@ -1,0 +1,1 @@
+{"conn": {"r_gid": 78, "r_lid": 61, "r_mtu": 105, "r_psn": 95, "r_qp_rd_atom": 69, "r_qpn": 107, "r_rkey": 15, "r_vaddr": 123}, "ex": {"gid": 78, "lid": 61, "mtu": 105, "psn": 95, "qp_rd_atom": 69, "qpn": 107, "rkey": 15, "vaddr": 123}}

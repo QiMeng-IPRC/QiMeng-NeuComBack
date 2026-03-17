@@ -1,0 +1,1 @@
+{"boot_cpu_data": {"x86_max_cores": 75}, "snb_msr_uncores": 18, "snb_uncore_cbox": {"num_boxes": 75}, "uncore_msr_uncores": 18}

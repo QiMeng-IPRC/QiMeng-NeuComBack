@@ -1,0 +1,1061 @@
+{
+    "s2101": {
+        "inner": "void s2101_inner(){\n    for (int nl = 0; nl < 10*(100000); nl++) {\n        for (int i = 0; i < (256); i++) {\n            aa[i][i] += bb[i][i] * cc[i][i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2101, NULL);;",
+        "main": "extern void s2101_inner();\nfloat s2101(struct args_t * func_args)\n{\n\n//    diagonals\n//    main diagonal calculation\n//    jump in data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2101_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1279": {
+        "inner": "void s1279_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] < (float)0.) {\n                if (b[i] > a[i]) {\n                    c[i] += d[i] * e[i];\n                }\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1279, NULL);;",
+        "main": "extern void s1279_inner();\nfloat s1279(struct args_t * func_args)\n{\n\n//    control flow\n//    vector if/gotos\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1279_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s319": {
+        "inner": "float s319_inner(){\n    float sum;\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        sum = 0.;\n        for (int i = 0; i < (32000); i++) {\n            a[i] = c[i] + d[i];\n            sum += a[i];\n            b[i] = c[i] + e[i];\n            sum += b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&s319, NULL);;",
+        "main": "extern float s319_inner();\nfloat s319(struct args_t * func_args)\n{\n\n//    reductions\n//    coupled reductions\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s319_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s115": {
+        "inner": "void s115_inner(){\n    for (int nl = 0; nl < 1000*((100000)/(256)); nl++) {\n        for (int j = 0; j < (256); j++) {\n            for (int i = j+1; i < (256); i++) {\n                a[i] -= aa[j][i] * a[j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s115, NULL);;",
+        "main": "extern void s115_inner();\nfloat s115(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    triangular saxpy loop\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns115_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s132": {
+        "inner": "void s132_inner(){\n    int m = 0;\n    int j = m;\n    int k = m+1;\n    for (int nl = 0; nl < 400*(100000); nl++) {\n        for (int i= 1; i < (256); i++) {\n            aa[j][i] = aa[k][i-1] + b[i] * c[1];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s132, NULL);;",
+        "main": "extern void s132_inner();\nfloat s132(struct args_t * func_args)\n{\n//    global data flow analysis\n//    loop with multiple dimension ambiguous subscripts\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns132_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4121": {
+        "inner": "void s4121_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += f(b[i],c[i]);\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s4121, NULL);;",
+        "main": "extern void s4121_inner();\nfloat s4121(struct args_t * func_args)\n{\n\n//    statement functions\n//    elementwise multiplication\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns4121_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern float f(float a, float b);\n"
+    },
+    "s272": {
+        "inner": "void s272_inner(int t){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (e[i] >= t) {\n                a[i] += c[i] * d[i];\n                b[i] += c[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s272, &s1);;",
+        "main": "extern void s272_inner(int);\nfloat s272(struct args_t * func_args)\n{\n\n//    control flow\n//    loop with independent conditional\n\n    int t = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns272_inner(t);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s235": {
+        "inner": "void s235_inner(){\n    for (int nl = 0; nl < 200*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            a[i] += b[i] * c[i];\n            for (int j = 1; j < (256); j++) {\n                aa[j][i] = aa[j-1][i] + bb[j][i] * a[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s235, NULL);;",
+        "main": "extern void s235_inner();\nfloat s235(struct args_t * func_args)\n{\n\n//    loop interchanging\n//    imperfectly nested loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns235_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4114": {
+        "inner": "void s4114_inner(int* __restrict__ ip, int n1){\n    int k;\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = n1-1; i < (32000); i++) {\n            k = ip[i];\n            a[i] = b[i] + c[(32000)-k+1-2] * d[i];\n            k += 5;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s4114, &(struct{int*a;int b;}){ip, n1});;",
+        "main": "extern void s4114_inner(int*, int);\nfloat s4114(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    mix indirect addressing with variable lower and upper bounds\n//    gather is required\n\n    struct{int * __restrict__ a;int b;} * x = func_args->arg_info;\n    int * __restrict__ ip = x->a;\n    int n1 = x->b;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns4114_inner(ip, n1);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s152": {
+        "inner": "void s152_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            b[i] = d[i] * e[i];\n            s152s(a, b, c, i);\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s152, NULL);;",
+        "main": "extern void s152_inner();\nfloat s152(struct args_t * func_args)\n{\n\n//    interprocedural data flow analysis\n//    collecting information from a subroutine\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns152_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern void s152s(float a[32000], float b[32000], float c[32000], int i);\n     "
+    },
+    "s128": {
+        "inner": "void s128_inner(){\n    int j, k;\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000)/2; i++) {\n            k = j + 1;\n            a[i] = b[k] - d[i];\n            j = k + 1;\n            b[k] = a[i] + c[k];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s128, NULL);;",
+        "main": "extern void s128_inner();\nfloat s128(struct args_t * func_args)\n{\n\n//    induction variables\n//    coupled induction variables\n//    jump in data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns128_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s126": {
+        "inner": "void s126_inner(){\n    int k;\n    for (int nl = 0; nl < 10*((100000)/(256)); nl++) {\n        k = 1;\n        for (int i = 0; i < (256); i++) {\n            for (int j = 1; j < (256); j++) {\n                bb[j][i] = bb[j-1][i] + flat_2d_array[k-1] * cc[j][i];\n                ++k;\n            }\n            ++k;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s126, NULL);;",
+        "main": "extern void s126_inner();\nfloat s126(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    induction variable in two loops; recurrence in inner loop\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns126_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s31111": {
+        "inner": "void s31111_inner(){\n    float sum;\n    for (int nl = 0; nl < 2000*(100000); nl++) {\n        sum = (float)0.;\n        sum += test(a);\n        sum += test(&a[4]);\n        sum += test(&a[8]);\n        sum += test(&a[12]);\n        sum += test(&a[16]);\n        sum += test(&a[20]);\n        sum += test(&a[24]);\n        sum += test(&a[28]);\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n}",
+        "time_func": "time_function(&s31111, NULL);;",
+        "main": "extern void s31111_inner();\nfloat s31111(struct args_t * func_args)\n{\n\n//    reductions\n//    sum reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns31111_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern float test(float*);\n"
+    },
+    "s278": {
+        "inner": "void s278_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > (float)0.) {\n                goto L20;\n            }\n            b[i] = -b[i] + d[i] * e[i];\n            goto L30;\nL20:\n            c[i] = -c[i] + d[i] * e[i];\nL30:\n            a[i] = b[i] + c[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s278, NULL);;",
+        "main": "extern void s278_inner();\nfloat s278(struct args_t * func_args)\n{\n\n//    control flow\n//    if/goto to block if-then-else\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns278_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2711": {
+        "inner": "void s2711_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (b[i] != (float)0.0) {\n                a[i] += b[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2711, NULL);;",
+        "main": "extern void s2711_inner();\nfloat s2711(struct args_t * func_args)\n{\n\n//    control flow\n//    semantic if removal\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2711_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s453": {
+        "inner": "void s453_inner(){\n    float s;\n    for (int nl = 0; nl < (100000)*2; nl++) {\n        s = 0.;\n        for (int i = 0; i < (32000); i++) {\n            s += (float)2.;\n            a[i] = s * b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s453, NULL);;",
+        "main": "extern void s453_inner();\nfloat s453(struct args_t * func_args)\n{\n\n//    induction varibale recognition\n\n\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns453_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s441": {
+        "inner": "void s441_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (d[i] < (float)0.) {\n                a[i] += b[i] * c[i];\n            } else if (d[i] == (float)0.) {\n                a[i] += b[i] * b[i];\n            } else {\n                a[i] += c[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s441, NULL);;",
+        "main": "extern void s441_inner();\nfloat s441(struct args_t * func_args)\n{\n\n//    non-logical if's\n//    arithmetic if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns441_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1251": {
+        "inner": "void s1251_inner(){\n    float s;\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            s = b[i]+c[i];\n            b[i] = a[i]+d[i];\n            a[i] = s*e[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1251, NULL);;",
+        "main": "extern void s1251_inner();\nfloat s1251(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    scalar expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1251_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s257": {
+        "inner": "void s257_inner(){\n    for (int nl = 0; nl < 10*((100000)/(256)); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                a[i] = aa[j][i] - a[i-1];\n                aa[j][i] = a[i] + bb[j][i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s257, NULL);;",
+        "main": "extern void s257_inner();\nfloat s257(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    array expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns257_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s244": {
+        "inner": "void s244_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; ++i) {\n            a[i] = b[i] + c[i] * d[i];\n            b[i] = c[i] + b[i];\n            a[i+1] = b[i] + a[i+1] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s244, NULL);;",
+        "main": "extern void s244_inner();\nfloat s244(struct args_t * func_args)\n{\n\n//    node splitting\n//    false dependence cycle breaking\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns244_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s113": {
+        "inner": "void s113_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 1; i < (32000); i++) {\n            a[i] = a[0] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s113, NULL);;",
+        "main": "extern void s113_inner();\nfloat s113(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    a(i)=a(1) but no actual dependence cycle\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns113_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s124": {
+        "inner": "void s124_inner(){\n    int j;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000); i++) {\n            if (b[i] > (float)0.) {\n                j++;\n                a[j] = b[i] + d[i] * e[i];\n            } else {\n                j++;\n                a[j] = c[i] + d[i] * e[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s124, NULL);;",
+        "main": "extern void s124_inner();\nfloat s124(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    induction variable under both sides of if (same value)\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns124_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s221": {
+        "inner": "void s221_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 1; i < (32000); i++) {\n            a[i] += c[i] * d[i];\n            b[i] = b[i - 1] + a[i] + d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s221, NULL);;",
+        "main": "extern void s221_inner();\nfloat s221(struct args_t * func_args)\n{\n\n//    loop distribution\n//    loop that is partially recursive\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns221_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s3113": {
+        "inner": "float s3113_inner(){\n    float max;\n    for (int nl = 0; nl < (100000)*4; nl++) {\n        max = fabsf(a[0]);\n        for (int i = 0; i < (32000); i++) {\n            if ((fabsf(a[i])) > max) {\n                max = fabsf(a[i]);\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, max);\n    }\n    return max;\n}",
+        "time_func": "time_function(&s3113, NULL);;",
+        "main": "extern float s3113_inner();\nfloat s3113(struct args_t * func_args)\n{\n\n//    reductions\n//    maximum of absolute value\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s3113_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": "extern float fabsf(float);\n"
+    },
+    "vpvtv": {
+        "inner": "void vpvtv_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[i] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vpvtv, NULL);;",
+        "main": "extern void vpvtv_inner();\nfloat vpvtv(struct args_t * func_args)\n{\n\n//    control loops\n//    vector plus vector times vector\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvpvtv_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s141": {
+        "inner": "void s141_inner(){\n    int k;\n    for (int nl = 0; nl < 200*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            k = (i+1) * ((i+1) - 1) / 2 + (i+1)-1;\n            for (int j = i; j < (256); j++) {\n                flat_2d_array[k] += bb[j][i];\n                k += j+1;\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s141, NULL);;",
+        "main": "extern void s141_inner();\nfloat s141(struct args_t * func_args)\n{\n\n//    nonlinear dependence testing\n//    walk a row in a symmetric packed array\n//    element a(i,j) for (int j>i) stored in location j*(j-1)/2+i\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns141_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2710": {
+        "inner": "void s2710_inner(int x){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > b[i]) {\n                a[i] += b[i] * d[i];\n                if ((32000) > 10) {\n                    c[i] += d[i] * d[i];\n                } else {\n                    c[i] = d[i] * e[i] + (float)1.;\n                }\n            } else {\n                b[i] = a[i] + e[i] * e[i];\n                if (x > (float)0.) {\n                    c[i] = a[i] + d[i] * d[i];\n                } else {\n                    c[i] += e[i] * e[i];\n                }\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2710, &s1);;",
+        "main": "extern void s2710_inner(int);\nfloat s2710(struct args_t * func_args)\n{\n\n//    control flow\n//    scalar and vector ifs\n\n    int x = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2710_inner(x);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s443": {
+        "inner": "void s443_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (d[i] <= (float)0.) {\n                goto L20;\n            } else {\n                goto L30;\n            }\nL20:\n            a[i] += b[i] * c[i];\n            goto L50;\nL30:\n            a[i] += b[i] * b[i];\nL50:\n            ;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s443, NULL);;",
+        "main": "extern void s443_inner();\nfloat s443(struct args_t * func_args)\n{\n\n//    non-logical if's\n//    arithmetic if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns443_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s123": {
+        "inner": "void s123_inner(){\n    int j;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = -1;\n        for (int i = 0; i < ((32000)/2); i++) {\n            j++;\n            a[j] = b[i] + d[i] * e[i];\n            if (c[i] > (float)0.) {\n                j++;\n                a[j] = c[i] + d[i] * e[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s123, NULL);;",
+        "main": "extern void s123_inner();\nfloat s123(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    induction variable under an if\n//    not vectorizable, the condition cannot be speculated\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns123_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s293": {
+        "inner": "void s293_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = a[0];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s293, NULL);;",
+        "main": "extern void s293_inner();\nfloat s293(struct args_t * func_args)\n{\n\n//    loop peeling\n//    a(i)=a(0) with actual dependence cycle, loop is vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns293_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s252": {
+        "inner": "void s252_inner(){\n    float t, s;\n    for (int nl = 0; nl < (100000); nl++) {\n        t = (float) 0.;\n        for (int i = 0; i < (32000); i++) {\n            s = b[i] * c[i];\n            a[i] = s + t;\n            t = s;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s252, NULL);;",
+        "main": "extern void s252_inner();\nfloat s252(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    loop with ambiguous scalar temporary\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns252_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s222": {
+        "inner": "void s222_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 1; i < (32000); i++) {\n            a[i] += b[i] * c[i];\n            e[i] = e[i - 1] * e[i - 1];\n            a[i] -= b[i] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s222, NULL);;",
+        "main": "extern void s222_inner();\nfloat s222(struct args_t * func_args)\n{\n\n//    loop distribution\n//    partial loop vectorizatio recurrence in middle\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns222_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s3111": {
+        "inner": "float s3111_inner(){\n    float sum;\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        sum = 0.;\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > (float)0.) {\n                sum += a[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&s3111, NULL);;",
+        "main": "extern float s3111_inner();\nfloat s3111(struct args_t * func_args)\n{\n\n//    reductions\n//    conditional sum reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s3111_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s253": {
+        "inner": "void s253_inner(){\n    float s;\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > b[i]) {\n                s = a[i] - b[i] * d[i];\n                c[i] += s;\n                a[i] = s;\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s253, NULL);;",
+        "main": "extern void s253_inner();\nfloat s253(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    scalar expansio assigned under if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns253_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s131": {
+        "inner": "void s131_inner(){\n    int m  = 1;\n    for (int nl = 0; nl < 5*(100000); nl++) {\n        for (int i = 0; i < (32000) - 1; i++) {\n            a[i] = a[i + m] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s131, NULL);;",
+        "main": "extern void s131_inner();\nfloat s131(struct args_t * func_args)\n{\n//    global data flow analysis\n//    forward substitution\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns131_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s112": {
+        "inner": "void s112_inner(){\n    for (int nl = 0; nl < 3*(100000); nl++) {\n        for (int i = (32000) - 2; i >= 0; i--) {\n            a[i+1] = a[i] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s112, NULL);;",
+        "main": "extern void s112_inner();\nfloat s112(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    loop reversal\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns112_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vpvpv": {
+        "inner": "void vpvpv_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[i] + c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vpvpv, NULL);;",
+        "main": "extern void vpvpv_inner();\nfloat vpvpv(struct args_t * func_args)\n{\n\n//    control loops\n//    vector plus vector plus vector\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvpvpv_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s258": {
+        "inner": "void s258_inner(){\n    float s;\n    for (int nl = 0; nl < (100000); nl++) {\n        s = 0.;\n        for (int i = 0; i < (256); ++i) {\n            if (a[i] > 0.) {\n                s = d[i] * d[i];\n            }\n            b[i] = s * c[i] + d[i];\n            e[i] = (s + (float)1.) * aa[0][i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s258, NULL);;",
+        "main": "extern void s258_inner();\nfloat s258(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    wrap-around scalar under an if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns258_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2275": {
+        "inner": "void s2275_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                aa[j][i] = aa[j][i] + bb[j][i] * cc[j][i];\n            }\n            a[i] = b[i] + c[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2275, NULL);;",
+        "main": "extern void s2275_inner();\nfloat s2275(struct args_t * func_args)\n{\n\n//    loop distribution is needed to be able to interchange\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2275_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s111": {
+        "inner": "void s111_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 1; i < (32000); i += 2) {\n            a[i] = a[i - 1] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s111, NULL);;",
+        "main": "extern void s111_inner();\nfloat s111(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    no dependence - vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns111_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s171": {
+        "inner": "void s171_inner(int inc){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i * inc] += b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s171, &n1);;",
+        "main": "extern void s171_inner(int);\nfloat s171(struct args_t * func_args)\n{\n\n//    symbolics\n//    symbolic dependence tests\n\n    int inc = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns171_inner(inc);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vbor": {
+        "inner": "void vbor_inner(){\n    float a1, b1, c1, d1, e1, f1;\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (256); i++) {\n            a1 = a[i];\n            b1 = b[i];\n            c1 = c[i];\n            d1 = d[i];\n            e1 = e[i];\n            f1 = aa[0][i];\n            a1 = a1 * b1 * c1 + a1 * b1 * d1 + a1 * b1 * e1 + a1 * b1 * f1 +\n                a1 * c1 * d1 + a1 * c1 * e1 + a1 * c1 * f1 + a1 * d1 * e1\n                + a1 * d1 * f1 + a1 * e1 * f1;\n            b1 = b1 * c1 * d1 + b1 * c1 * e1 + b1 * c1 * f1 + b1 * d1 * e1 +\n                b1 * d1 * f1 + b1 * e1 * f1;\n            c1 = c1 * d1 * e1 + c1 * d1 * f1 + c1 * e1 * f1;\n            d1 = d1 * e1 * f1;\n            x[i] = a1 * b1 * c1 * d1;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vbor, NULL);;",
+        "main": "extern void vbor_inner();\nfloat vbor(struct args_t * func_args)\n{\n\n//    control loops\n//    basic operations rates, isolate arithmetic from memory traffic\n//    all combinations of three, 59 flops for 6 loads and 1 store.\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvbor_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1115": {
+        "inner": "void s1115_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                aa[i][j] = aa[i][j]*cc[j][i] + bb[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1115, NULL);;",
+        "main": "extern void s1115_inner();\nfloat s1115(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    triangular saxpy loop\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1115_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s452": {
+        "inner": "void s452_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = b[i] + c[i] * (float) (i+1);\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s452, NULL);;",
+        "main": "extern void s452_inner();\nfloat s452(struct args_t * func_args)\n{\n\n//    intrinsic functions\n//    seq function\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns452_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s114": {
+        "inner": "void s114_inner(){\n    for (int nl = 0; nl < 200*((100000)/((256))); nl++) {\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < i; j++) {\n                aa[i][j] = aa[j][i] + bb[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s114, NULL);;",
+        "main": "extern void s114_inner();\nfloat s114(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    transpose vectorization\n//    Jump in data access - not vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns114_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s3251": {
+        "inner": "void s3251_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++){\n            a[i+1] = b[i]+c[i];\n            b[i]   = c[i]*e[i];\n            d[i]   = a[i]*e[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s3251, NULL);;",
+        "main": "extern void s3251_inner();\nfloat s3251(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    scalar expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns3251_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1112": {
+        "inner": "void s1112_inner(){\n    for (int nl = 0; nl < (100000)*3; nl++) {\n        for (int i = (32000) - 1; i >= 0; i--) {\n            a[i] = b[i] + (float) 1.;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1112, NULL);;",
+        "main": "extern void s1112_inner();\nfloat s1112(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    loop reversal\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1112_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4113": {
+        "inner": "void s4113_inner(int* __restrict__ ip){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[ip[i]] = b[ip[i]] + c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s4113, ip);;",
+        "main": "extern void s4113_inner(int*);\nfloat s4113(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    indirect addressing on rhs and lhs\n//    gather and scatter is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns4113_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s116": {
+        "inner": "void s116_inner(){\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (32000) - 5; i += 5) {\n            a[i] = a[i + 1] * a[i];\n            a[i + 1] = a[i + 2] * a[i + 1];\n            a[i + 2] = a[i + 3] * a[i + 2];\n            a[i + 3] = a[i + 4] * a[i + 3];\n            a[i + 4] = a[i + 5] * a[i + 4];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s116, NULL);;",
+        "main": "extern void s116_inner();\nfloat s116(struct args_t * func_args)\n{\n\n//    linear dependence testing\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns116_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4116": {
+        "inner": "float s4116_inner(int* __restrict__ ip, int j, int inc){\n    float sum;\n    int off;\n    for (int nl = 0; nl < 100*(100000); nl++) {\n        sum = 0.;\n        for (int i = 0; i < (256)-1; i++) {\n            off = inc + i;\n            sum += a[off] * aa[j-1][ip[i]];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&s4116, &(struct{int * a; int b; int c;}){ip, (256)/2, n1});;",
+        "main": "extern float s4116_inner(int*, int, int);\nfloat s4116(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    more complicated sparse sdot\n//    gather is required\n\n    struct{int * __restrict__ a;int b;int c;} * x = func_args->arg_info;\n    int * __restrict__ ip = x->a;\n    int j = x->b;\n    int inc = x->c;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s4116_inner(ip,j,inc);\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s256": {
+        "inner": "void s256_inner(){\n    for (int nl = 0; nl < 10*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            for (int j = 1; j < (256); j++) {\n                a[j] = (float)1.0 - a[j - 1];\n                aa[j][i] = a[j] + bb[j][i]*d[j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s256, NULL);;",
+        "main": "extern void s256_inner();\nfloat s256(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    array expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns256_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s276": {
+        "inner": "void s276_inner(){\n    int mid = ((32000)/2);\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (i+1 < mid) {\n                a[i] += b[i] * c[i];\n            } else {\n                a[i] += b[i] * d[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s276, NULL);;",
+        "main": "extern void s276_inner();\nfloat s276(struct args_t * func_args)\n{\n\n//    control flow\n//    if test using loop index\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns276_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s423": {
+        "inner": "void s423_inner(float* xx){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000) - 1; i++) {\n            flat_2d_array[i+1] = xx[i] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s423, NULL);;",
+        "main": "extern void s423_inner(float*);\nfloat s423(struct args_t * func_args)\n{\n\n//    storage classes and equivalencing\n//    common and equivalenced variables - with anti-dependence\n\n    // do this again here\n    int vl = 64;\n    xx = flat_2d_array + vl;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns423_inner(xx);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vtv": {
+        "inner": "void vtv_inner(){\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] *= b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vtv, NULL);;",
+        "main": "extern void vtv_inner();\nfloat vtv(struct args_t * func_args)\n{\n\n//    control loops\n//    vector times vector\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvtv_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s121": {
+        "inner": "void s121_inner(){\n    int j;\n    for (int nl = 0; nl < 3*(100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            j = i + 1;\n            a[i] = a[j] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s121, NULL);;",
+        "main": "extern void s121_inner();\nfloat s121(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    loop with possible ambiguity because of scalar store\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns121_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s251": {
+        "inner": "void s251_inner(){\n    float s;\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            s = b[i] + c[i] * d[i];\n            a[i] = s * s;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s251, NULL);;",
+        "main": "extern void s251_inner();\nfloat s251(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    scalar expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns251_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s343": {
+        "inner": "void s343_inner(){\n    int k;\n    for (int nl = 0; nl < 10*((100000)/(256)); nl++) {\n        k = -1;\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                if (bb[j][i] > (float)0.) {\n                    k++;\n                    flat_2d_array[k] = aa[j][i];\n                }\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s343, NULL);;",
+        "main": "extern void s343_inner();\nfloat s343(struct args_t * func_args)\n{\n\n//    packing\n//    pack 2-d array into one dimension\n//    not vectorizable, value of k in unknown at each iteration\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns343_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1113": {
+        "inner": "void s1113_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = a[(32000)/2] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1113, NULL);;",
+        "main": "extern void s1113_inner();\nfloat s1113(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    one iteration dependency on a((32000)/2) but still vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1113_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s279": {
+        "inner": "void s279_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > (float)0.) {\n                goto L20;\n            }\n            b[i] = -b[i] + d[i] * d[i];\n            if (b[i] <= a[i]) {\n                goto L30;\n            }\n            c[i] += d[i] * e[i];\n            goto L30;\nL20:\n            c[i] = -c[i] + e[i] * e[i];\nL30:\n            a[i] = b[i] + c[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s279, NULL);;",
+        "main": "extern void s279_inner();\nfloat s279(struct args_t * func_args)\n{\n\n//    control flow\n//    vector if/gotos\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns279_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1421": {
+        "inner": "void s1421_inner(){\n    xx = &b[(32000)/2];\n\n    for (int nl = 0; nl < 8*(100000); nl++) {\n        for (int i = 0; i < (32000)/2; i++) {\n            b[i] = xx[i] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s1421, NULL);;",
+        "main": "extern void s1421_inner();\nfloat s1421(struct args_t * func_args)\n{\n\n//    storage classes and equivalencing\n//    equivalence- no overlap\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1421_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1111": {
+        "inner": "void s1111_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000)/2; i++) {\n            a[2*i] = c[i] * b[i] + d[i] * b[i] + c[i] * c[i] + d[i] * b[i] + d[i] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1111, NULL);;",
+        "main": "extern void s1111_inner();\nfloat s1111(struct args_t * func_args)\n{\n\n//    no dependence - vectorizable\n//    jump in data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1111_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s353": {
+        "inner": "void s353_inner(int*__restrict__ ip){\n    float alpha = c[0];\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i += 5) {\n            a[i] += alpha * b[ip[i]];\n            a[i + 1] += alpha * b[ip[i + 1]];\n            a[i + 2] += alpha * b[ip[i + 2]];\n            a[i + 3] += alpha * b[ip[i + 3]];\n            a[i + 4] += alpha * b[ip[i + 4]];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s353, ip);;",
+        "main": "extern void s353_inner(int*);\nfloat s353(struct args_t * func_args)\n{\n\n//    loop rerolling\n//    unrolled sparse saxpy\n//    gather is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns353_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s232": {
+        "inner": "void s232_inner(){\n    for (int nl = 0; nl < 100*((100000)/((256))); nl++) {\n        for (int j = 1; j < (256); j++) {\n            for (int i = 1; i <= j; i++) {\n                aa[j][i] = aa[j][i-1]*aa[j][i-1]+bb[j][i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s232, NULL);;",
+        "main": "extern void s232_inner();\nfloat s232(struct args_t * func_args)\n{\n\n//    loop interchange\n//    interchanging of triangular loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns232_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s332": {
+        "inner": "float s332_inner(int t){\n    int index;\n    float value;\n    float chksum;\n    for (int nl = 0; nl < (100000); nl++) {\n        index = -2;\n        value = -1.;\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > t) {\n                index = i;\n                value = a[i];\n                goto L20;\n            }\n        }\nL20:\n        chksum = value + (float) index;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return value;\n}",
+        "time_func": "time_function(&s332, &s1);;",
+        "main": "extern float s332_inner(int);\nfloat s332(struct args_t * func_args)\n{\n\n//    search loops\n//    first value greater than threshold\n\n    int t = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s332_inner(t);\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s481": {
+        "inner": "void s481_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (d[i] < (float)0.) {\n                exit (0);\n            }\n            a[i] += b[i] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s481, NULL);;",
+        "main": "extern void s481_inner();\nfloat s481(struct args_t * func_args)\n{\n\n//    non-local goto's\n//    stop statement\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns481_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern void exit(int);\n"
+    },
+    "s151": {
+        "inner": "void s151_inner(){\n    for (int nl = 0; nl < 5*(100000); nl++) {\n        s151s(a, b,  1);\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s151, NULL);;",
+        "main": "extern void s151_inner();\nfloat s151(struct args_t * func_args)\n{\n\n//    interprocedural data flow analysis\n//    passing parameter information into a subroutine\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns151_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern void s151s(float a[32000], float b[32000],  int m);\n "
+    },
+    "s351": {
+        "inner": "void s351_inner(){\n    float alpha = c[0];\n    for (int nl = 0; nl < 8*(100000); nl++) {\n        for (int i = 0; i < (32000); i += 5) {\n            a[i] += alpha * b[i];\n            a[i + 1] += alpha * b[i + 1];\n            a[i + 2] += alpha * b[i + 2];\n            a[i + 3] += alpha * b[i + 3];\n            a[i + 4] += alpha * b[i + 4];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s351, NULL);;",
+        "main": "extern void s351_inner();\nfloat s351(struct args_t * func_args)\n{\n\n//    loop rerolling\n//    unrolled saxpy\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns351_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s273": {
+        "inner": "void s273_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += d[i] * e[i];\n            if (a[i] < (float)0.)\n                b[i] += d[i] * e[i];\n            c[i] += a[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s273, NULL);;",
+        "main": "extern void s273_inner();\nfloat s273(struct args_t * func_args)\n{\n\n//    control flow\n//    simple loop with dependent conditional\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns273_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s3112": {
+        "inner": "float s3112_inner(){\n    float sum;\n    for (int nl = 0; nl < (100000); nl++) {\n        sum = (float)0.0;\n        for (int i = 0; i < (32000); i++) {\n            sum += a[i];\n            b[i] = sum;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&s3112, NULL);;",
+        "main": "extern float s3112_inner();\nfloat s3112(struct args_t * func_args)\n{\n\n//    reductions\n//    sum reduction saving running sums\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s3112_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s1221": {
+        "inner": "void s1221_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 4; i < (32000); i++) {\n            b[i] = b[i - 4] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1221, NULL);;",
+        "main": "extern void s1221_inner();\nfloat s1221(struct args_t * func_args)\n{\n\n//    run-time symbolic resolution\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1221_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s13110": {
+        "inner": "float s13110_inner(){\n    int xindex, yindex;\n    float max, chksum;\n    for (int nl = 0; nl < 100*((100000)/((256))); nl++) {\n        max = aa[(0)][0];\n        xindex = 0;\n        yindex = 0;\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                if (aa[i][j] > max) {\n                    max = aa[i][j];\n                    xindex = i;\n                    yindex = j;\n                }\n            }\n        }\n        chksum = max + (float) xindex + (float) yindex;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return max + xindex+1 + yindex+1;\n}",
+        "time_func": "time_function(&s13110, NULL);;",
+        "main": "extern float s13110_inner();\nfloat s13110(struct args_t * func_args)\n{\n\n//    reductions\n//    if to max with index reductio 2 dimensions\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s13110_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s442": {
+        "inner": "void s442_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            switch (indx[i]) {\n                case 1:  goto L15;\n                case 2:  goto L20;\n                case 3:  goto L30;\n                case 4:  goto L40;\n            }\nL15:\n            a[i] += b[i] * b[i];\n            goto L50;\nL20:\n            a[i] += c[i] * c[i];\n            goto L50;\nL30:\n            a[i] += d[i] * d[i];\n            goto L50;\nL40:\n            a[i] += e[i] * e[i];\nL50:\n            ;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s442, NULL);;",
+        "main": "extern void s442_inner();\nfloat s442(struct args_t * func_args)\n{\n\n//    non-logical if's\n//    computed goto\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns442_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s243": {
+        "inner": "void s243_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            a[i] = b[i] + c[i  ] * d[i];\n            b[i] = a[i] + d[i  ] * e[i];\n            a[i] = b[i] + a[i+1] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s243, NULL);;",
+        "main": "extern void s243_inner();\nfloat s243(struct args_t * func_args)\n{\n\n//    node splitting\n//    false dependence cycle breaking\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns243_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2111": {
+        "inner": "void s2111_inner(){\n    for (int nl = 0; nl < 100*((100000)/((256))); nl++) {\n        for (int j = 1; j < (256); j++) {\n            for (int i = 1; i < (256); i++) {\n                aa[j][i] = (aa[j][i-1] + aa[j-1][i])/1.9;\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2111, NULL);;",
+        "main": "extern void s2111_inner();\nfloat s2111(struct args_t * func_args)\n{\n\n//    wavefronts, it will make jump in data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2111_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s312": {
+        "inner": "float s312_inner(){\n    float prod;\n    for (int nl = 0; nl < 10*(100000); nl++) {\n        prod = (float)1.;\n        for (int i = 0; i < (32000); i++) {\n            prod *= a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, prod);\n    }\n    return prod;\n}",
+        "time_func": "time_function(&s312, NULL);;",
+        "main": "extern float s312_inner();\nfloat s312(struct args_t * func_args)\n{\n\n//    reductions\n//    product reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s312_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s241": {
+        "inner": "void s241_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            a[i] = b[i] * c[i  ] * d[i];\n            b[i] = a[i] * a[i+1] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s241, NULL);;",
+        "main": "extern void s241_inner();\nfloat s241(struct args_t * func_args)\n{\n\n//    node splitting\n//    preloading necessary to allow vectorization\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns241_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s491": {
+        "inner": "void s491_inner(int* __restrict__ ip){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[ip[i]] = b[i] + c[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s491, ip);;",
+        "main": "extern void s491_inner(int*);\nfloat s491(struct args_t * func_args)\n{\n\n//    vector semantics\n//    indirect addressing on lhs, store in sequence\n//    scatter is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns491_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s422": {
+        "inner": "void s422_inner(){\n    xx = flat_2d_array + 4;\n\n    for (int nl = 0; nl < 8*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            xx[i] = flat_2d_array[i + 8] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s422, NULL);;",
+        "main": "extern void s422_inner();\nfloat s422(struct args_t * func_args)\n{\n\n//    storage classes and equivalencing\n//    common and equivalence statement\n//    anti-dependence, threshold of 4\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns422_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s212": {
+        "inner": "void s212_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            a[i] *= c[i];\n            b[i] += a[i + 1] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s212, NULL);;",
+        "main": "extern void s212_inner();\nfloat s212(struct args_t * func_args)\n{\n\n//    statement reordering\n//    dependency needing temporary\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns212_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s323": {
+        "inner": "void s323_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 1; i < (32000); i++) {\n            a[i] = b[i-1] + c[i] * d[i];\n            b[i] = a[i] + c[i] * e[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s323, NULL);;",
+        "main": "extern void s323_inner();\nfloat s323(struct args_t * func_args)\n{\n\n//    recurrences\n//    coupled recurrence\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns323_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2712": {
+        "inner": "void s2712_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > b[i]) {\n                a[i] += b[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2712, NULL);;",
+        "main": "extern void s2712_inner();\nfloat s2712(struct args_t * func_args)\n{\n\n//    control flow\n//    if to elemental min\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2712_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vif": {
+        "inner": "void vif_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (b[i] > (float)0.) {\n                a[i] = b[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vif, NULL);;",
+        "main": "extern void vif_inner();\nfloat vif(struct args_t * func_args)\n{\n\n//    control loops\n//    vector if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvif_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s421": {
+        "inner": "void s421_inner(){\n    xx = flat_2d_array;\n\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        yy = xx;\n        for (int i = 0; i < (32000) - 1; i++) {\n            xx[i] = yy[i+1] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s421, NULL);;",
+        "main": "extern void s421_inner();\nfloat s421(struct args_t * func_args)\n{\n\n//    storage classes and equivalencing\n//    equivalence- no overlap\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns421_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s274": {
+        "inner": "void s274_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = c[i] + e[i] * d[i];\n            if (a[i] > (float)0.) {\n                b[i] = a[i] + b[i];\n            } else {\n                a[i] = d[i] * e[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s274, NULL);;",
+        "main": "extern void s274_inner();\nfloat s274(struct args_t * func_args)\n{\n\n//    control flow\n//    complex loop with dependent conditional\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns274_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s321": {
+        "inner": "void s321_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 1; i < (32000); i++) {\n            a[i] += a[i-1] * b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s321, NULL);;",
+        "main": "extern void s321_inner();\nfloat s321(struct args_t * func_args)\n{\n\n//    recurrences\n//    first order linear recurrence\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns321_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s292": {
+        "inner": "void s292_inner(){\n    int im1, im2;\n    for (int nl = 0; nl < (100000); nl++) {\n        im1 = (32000)-1;\n        im2 = (32000)-2;\n        for (int i = 0; i < (32000); i++) {\n            a[i] = (b[i] + b[im1] + b[im2]) * (float).333;\n            im2 = im1;\n            im1 = i;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s292, NULL);;",
+        "main": "extern void s292_inner();\nfloat s292(struct args_t * func_args)\n{\n\n//    loop peeling\n//    wrap around variable, 2 levels\n//    similar to S291\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns292_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vpvts": {
+        "inner": "void vpvts_inner(float s){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[i] * s;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vpvts, &s1);;",
+        "main": "extern void vpvts_inner(float);\nfloat vpvts(struct args_t * func_args)\n{\n\n//    control loops\n//    vector plus vector times scalar\n\n    float s = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvpvts_inner(s);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s451": {
+        "inner": "void s451_inner(){\n    for (int nl = 0; nl < (100000)/5; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = sinf(b[i]) + cosf(c[i]);\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s451, NULL);;",
+        "main": "extern void s451_inner();\nfloat s451(struct args_t * func_args)\n{\n\n//    intrinsic functions\n//    intrinsics\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns451_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern float sinf(float);\nextern float cosf(float);\n"
+    },
+    "vtvtv": {
+        "inner": "void vtvtv_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = a[i] * b[i] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vtvtv, NULL);;",
+        "main": "extern void vtvtv_inner();\nfloat vtvtv(struct args_t * func_args)\n{\n\n//    control loops\n//    vector times vector times vector\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvtvtv_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2233": {
+        "inner": "void s2233_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 1; j < (256); j++) {\n                aa[j][i] = aa[j-1][i] + cc[j][i];\n            }\n            for (int j = 1; j < (256); j++) {\n                bb[i][j] = bb[i-1][j] + cc[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2233, NULL);;",
+        "main": "extern void s2233_inner();\nfloat s2233(struct args_t * func_args)\n{\n\n//    loop interchange\n//    interchanging with one of two inner loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2233_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "va": {
+        "inner": "void va_inner(){\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&va, NULL);;",
+        "main": "extern void va_inner();\nfloat va(struct args_t * func_args)\n{\n\n//    control loops\n//    vector assignment\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nva_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s317": {
+        "inner": "float s317_inner(){\n    float q;\n    for (int nl = 0; nl < 5*(100000); nl++) {\n        q = (float)1.;\n        for (int i = 0; i < (32000)/2; i++) {\n            q *= (float).99;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, q);\n    }\n    return q;\n}",
+        "time_func": "time_function(&s317, NULL);;",
+        "main": "extern float s317_inner();\nfloat s317(struct args_t * func_args)\n{\n\n//    reductions\n//    product reductio vectorize with\n//    1. scalar expansion of factor, and product reduction\n//    2. closed form solution: q = factor**n\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s317_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s482": {
+        "inner": "void s482_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[i] * c[i];\n            if (c[i] > b[i]) break;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s482, NULL);;",
+        "main": "extern void s482_inner();\nfloat s482(struct args_t * func_args)\n{\n\n//    non-local goto's\n//    other loop exit with code before exit\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns482_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vas": {
+        "inner": "void vas_inner(int* __restrict__ ip){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[ip[i]] = b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vas, ip);;",
+        "main": "extern void vas_inner(int*);\nfloat vas(struct args_t * func_args)\n{\n\n//    control loops\n//    vector assignment, scatter\n//    scatter is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvas_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2102": {
+        "inner": "void s2102_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                aa[j][i] = (float)0.;\n            }\n            aa[i][i] = (float)1.;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2102, NULL);;",
+        "main": "extern void s2102_inner();\nfloat s2102(struct args_t * func_args)\n{\n\n//    diagonals\n//    identity matrix, best results vectorize both inner and outer loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2102_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s254": {
+        "inner": "void s254_inner(){\n    float x;\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        x = b[(32000)-1];\n        for (int i = 0; i < (32000); i++) {\n            a[i] = (b[i] + x) * (float).5;\n            x = b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s254, NULL);;",
+        "main": "extern void s254_inner();\nfloat s254(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    carry around variable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns254_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s277": {
+        "inner": "void s277_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n                if (a[i] >= (float)0.) {\n                    goto L20;\n                }\n                if (b[i] >= (float)0.) {\n                    goto L30;\n                }\n                a[i] += c[i] * d[i];\nL30:\n                b[i+1] = c[i] + d[i] * e[i];\nL20:\n;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s277, NULL);;",
+        "main": "extern void s277_inner();\nfloat s277(struct args_t * func_args)\n{\n\n//    control flow\n//    test for dependences arising from guard variable computation.\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns277_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s424": {
+        "inner": "void s424_inner(float* xx){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000) - 1; i++) {\n            xx[i+1] = flat_2d_array[i] + a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s424, NULL);;",
+        "main": "extern void s424_inner(float*);\nfloat s424(struct args_t * func_args)\n{\n\n//    storage classes and equivalencing\n//    common and equivalenced variables - overlap\n//    vectorizeable in strips of 64 or less\n\n    // do this again here\n    int vl = 63;\n    xx = flat_2d_array + vl;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns424_inner(xx);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1161": {
+        "inner": "void s1161_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; ++i) {\n            if (c[i] < (float)0.) {\n                goto L20;\n            }\n            a[i] = c[i] + d[i] * e[i];\n            goto L10;\nL20:\n            b[i] = a[i] + d[i] * d[i];\nL10:\n            ;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1161, NULL);;",
+        "main": "extern void s1161_inner();\nfloat s1161(struct args_t * func_args)\n{\n\n//    control flow\n//    tests for recognition of loop independent dependences\n//    between statements in mutually exclusive regions.\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1161_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vag": {
+        "inner": "void vag_inner(int* __restrict__ ip){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = b[ip[i]];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vag, ip);;",
+        "main": "extern void vag_inner(int*);\nfloat vag(struct args_t * func_args)\n{\n\n//    control loops\n//    vector assignment, gather\n//    gather is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvag_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s314": {
+        "inner": "float s314_inner(){\n    float x;\n    for (int nl = 0; nl < (100000)*5; nl++) {\n        x = a[0];\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > x) {\n                x = a[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, x);\n    }\n    return x;\n}",
+        "time_func": "time_function(&s314, NULL);;",
+        "main": "extern float s314_inner();\nfloat s314(struct args_t * func_args)\n{\n\n//    reductions\n//    if to max reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    \nfloat x;\nx = s314_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return x;\n}",
+        "need_before": ""
+    },
+    "s281": {
+        "inner": "void s281_inner(){\n    float x;\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            x = a[(32000)-i-1] + b[i] * c[i];\n            a[i] = x-(float)1.0;\n            b[i] = x;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s281, NULL);;",
+        "main": "extern void s281_inner();\nfloat s281(struct args_t * func_args)\n{\n\n//    crossing thresholds\n//    index set splitting\n//    reverse data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns281_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1213": {
+        "inner": "void s1213_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 1; i < (32000)-1; i++) {\n            a[i] = b[i-1]+c[i];\n            b[i] = a[i+1]*d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1213, NULL);;",
+        "main": "extern void s1213_inner();\nfloat s1213(struct args_t * func_args)\n{\n\n//    statement reordering\n//    dependency needing temporary\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1213_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2251": {
+        "inner": "void s2251_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        float s = (float)0.0;\n        for (int i = 0; i < (32000); i++) {\n            a[i] = s*e[i];\n            s = b[i]+c[i];\n            b[i] = a[i]+d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2251, NULL);;",
+        "main": "extern void s2251_inner();\nfloat s2251(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    scalar expansion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2251_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4112": {
+        "inner": "void s4112_inner(int* __restrict__ ip, float s){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[ip[i]] * s;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s4112, &(struct{int*a;float b;}){ip, s1});;",
+        "main": "extern void s4112_inner(int*, float);\nfloat s4112(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    sparse saxpy\n//    gather is required\n\n    struct{int * __restrict__ a;float b;} * x = func_args->arg_info;\n    int * __restrict__ ip = x->a;\n    float s = x->b;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns4112_inner(ip, s);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vdotr": {
+        "inner": "float vdotr_inner(){\n    float dot;\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        dot = 0.;\n        for (int i = 0; i < (32000); i++) {\n            dot += a[i] * b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, dot);\n    }\n    return dot;\n}",
+        "time_func": "time_function(&vdotr, NULL);;",
+        "main": "extern float vdotr_inner();\nfloat vdotr(struct args_t * func_args)\n{\n\n//    control loops\n//    vector dot product reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = vdotr_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s161": {
+        "inner": "void s161_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 0; i < (32000)-1; ++i) {\n            if (b[i] < (float)0.) {\n                goto L20;\n            }\n            a[i] = c[i] + d[i] * e[i];\n            goto L10;\nL20:\n            c[i+1] = a[i] + d[i] * d[i];\nL10:\n            ;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s161, NULL);;",
+        "main": "extern void s161_inner();\nfloat s161(struct args_t * func_args)\n{\n\n//    control flow\n//    tests for recognition of loop independent dependences\n//    between statements in mutually exclusive regions.\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns161_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s211": {
+        "inner": "void s211_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 1; i < (32000)-1; i++) {\n            a[i] = b[i - 1] + c[i] * d[i];\n            b[i] = b[i + 1] - e[i] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s211, NULL);;",
+        "main": "extern void s211_inner();\nfloat s211(struct args_t * func_args)\n{\n\n//    statement reordering\n//    statement reordering allows vectorization\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns211_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s291": {
+        "inner": "void s291_inner(){\n    int im1;\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        im1 = (32000)-1;\n        for (int i = 0; i < (32000); i++) {\n            a[i] = (b[i] + b[im1]) * (float).5;\n            im1 = i;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s291, NULL);;",
+        "main": "extern void s291_inner();\nfloat s291(struct args_t * func_args)\n{\n\n//    loop peeling\n//    wrap around variable, 1 level\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns291_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s318": {
+        "inner": "float s318_inner(int inc){\n    int k, index;\n    float max, chksum;\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        k = 0;\n        index = 0;\n        max = fabsf(a[0]);\n        k += inc;\n        for (int i = 1; i < (32000); i++) {\n            if (fabsf(a[k]) <= max) {\n                goto L5;\n            }\n            index = i;\n            max = fabsf(a[k]);\nL5:\n            k += inc;\n        }\n        chksum = max + (float) index;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return max + index + 1;\n}",
+        "time_func": "time_function(&s318, &n1);;",
+        "main": "extern float s318_inner(int);\nfloat s318(struct args_t * func_args)\n{\n\n//    reductions\n//    isamax, max absolute value, increments not equal to 1\n\n    int inc = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s318_inner(inc);\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": "extern float fabsf(float);\n"
+    },
+    "s322": {
+        "inner": "void s322_inner(){\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 2; i < (32000); i++) {\n            a[i] = a[i] + a[i - 1] * b[i] + a[i - 2] * c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s322, NULL);;",
+        "main": "extern void s322_inner();\nfloat s322(struct args_t * func_args)\n{\n\n//    recurrences\n//    second order linear recurrence\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns322_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vsumr": {
+        "inner": "float vsumr_inner(){\n    float sum;\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        sum = 0.;\n        for (int i = 0; i < (32000); i++) {\n            sum += a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&vsumr, NULL);;",
+        "main": "extern float vsumr_inner();\nfloat vsumr(struct args_t * func_args)\n{\n\n//    control loops\n//    vector sum reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = vsumr_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s315": {
+        "inner": "float s315_inner(){\n    for (int i = 0; i < (32000); i++)\n        a[i] = (i * 7) % (32000);\n\n    float x, chksum;\n    int index;\n    for (int nl = 0; nl < (100000); nl++) {\n        x = a[0];\n        index = 0;\n        for (int i = 0; i < (32000); ++i) {\n            if (a[i] > x) {\n                x = a[i];\n                index = i;\n            }\n        }\n        chksum = x + (float) index;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return index + x + 1;\n}",
+        "time_func": "time_function(&s315, NULL);;",
+        "main": "extern float s315_inner();\nfloat s315(struct args_t * func_args)\n{\n\n//    reductions\n//    if to max with index reductio 1 dimension\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s315_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s4115": {
+        "inner": "float s4115_inner(int* __restrict__ ip){\n    float sum;\n    for (int nl = 0; nl < (100000); nl++) {\n        sum = 0.;\n        for (int i = 0; i < (32000); i++) {\n            sum += a[i] * b[ip[i]];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n    return sum;\n}",
+        "time_func": "time_function(&s4115, ip);;",
+        "main": "extern float s4115_inner(int*);\nfloat s4115(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    sparse dot product\n//    gather is required\n\n    int * __restrict__ ip = func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s4115_inner(ip);\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s275": {
+        "inner": "void s275_inner(){\n    for (int nl = 0; nl < 10*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); i++) {\n            if (aa[0][i] > (float)0.) {\n                for (int j = 1; j < (256); j++) {\n                    aa[j][i] = aa[j-1][i] + bb[j][i] * cc[j][i];\n                }\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s275, NULL);;",
+        "main": "extern void s275_inner();\nfloat s275(struct args_t * func_args)\n{\n\n//    control flow\n//    if around inner loop, interchanging needed\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns275_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "vpv": {
+        "inner": "void vpv_inner(){\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] += b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&vpv, NULL);;",
+        "main": "extern void vpv_inner();\nfloat vpv(struct args_t * func_args)\n{\n\n//    control loops\n//    vector plus vector\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\nvpv_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1244": {
+        "inner": "void s1244_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            a[i] = b[i] + c[i] * c[i] + b[i]*b[i] + c[i];\n            d[i] = a[i] + a[i+1];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1244, NULL);;",
+        "main": "extern void s1244_inner();\nfloat s1244(struct args_t * func_args)\n{\n\n//    node splitting\n//    cycle with ture and anti dependency\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1244_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s352": {
+        "inner": "float s352_inner(){\n    float dot;\n    for (int nl = 0; nl < 8*(100000); nl++) {\n        dot = (float)0.;\n        for (int i = 0; i < (32000); i += 5) {\n            dot = dot + a[i] * b[i] + a[i + 1] * b[i + 1] + a[i + 2]\n                * b[i + 2] + a[i + 3] * b[i + 3] + a[i + 4] * b[i + 4];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, dot);\n    }\n    return dot;\n}",
+        "time_func": "time_function(&s352, NULL);;",
+        "main": "extern float s352_inner();\nfloat s352(struct args_t * func_args)\n{\n\n//    loop rerolling\n//    unrolled dot product\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s352_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s471": {
+        "inner": "void s471_inner(){\n    int m = 32000;\n    for (int nl = 0; nl < (100000)/2; nl++) {\n        for (int i = 0; i < m; i++) {\n            x[i] = b[i] + d[i] * d[i];\n            s471s();\n            b[i] = c[i] + d[i] * e[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s471, NULL);;",
+        "main": "extern void s471_inner();\nfloat s471(struct args_t * func_args){\n\n//    call statements\n\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns471_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": "extern int s471s(void);\n"
+    },
+    "s1351": {
+        "inner": "void s1351_inner(){\n    for (int nl = 0; nl < 8*(100000); nl++) {\n        float* __restrict__ A = a;\n        float* __restrict__ B = b;\n        float* __restrict__ C = c;\n        for (int i = 0; i < (32000); i++) {\n            *A = *B+*C;\n            A++;\n            B++;\n            C++;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1351, NULL);;",
+        "main": "extern void s1351_inner();\nfloat s1351(struct args_t * func_args)\n{\n\n//    induction pointer recognition\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1351_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s162": {
+        "inner": "void s162_inner(int k){\n    for (int nl = 0; nl < (100000); nl++) {\n        if (k > 0) {\n            for (int i = 0; i < (32000)-1; i++) {\n                a[i] = a[i + k] + b[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s162, &n1);;",
+        "main": "extern void s162_inner(int);\nfloat s162(struct args_t * func_args)\n{\n//    control flow\n//    deriving assertions\n\n    int k = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns162_inner(k);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s342": {
+        "inner": "void s342_inner(){\n    int j = 0;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] > (float)0.) {\n                j++;\n                a[i] = b[j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s342, NULL);;",
+        "main": "extern void s342_inner();\nfloat s342(struct args_t * func_args)\n{\n\n//    packing\n//    unpacking\n//    not vectorizable, value of j in unknown at each iteration\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns342_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s122": {
+        "inner": "void s122_inner(int n1, int n3){\n    int j, k;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = 1;\n        k = 0;\n        for (int i = n1-1; i < (32000); i += n3) {\n            k += j;\n            a[i] += b[(32000) - k];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s122, &(struct{int a;int b;}){n1, n3});;",
+        "main": "extern void s122_inner(int,int);\nfloat s122(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    variable lower and upper bound, and stride\n//    reverse data access and jump in data access\n\n    struct{int a;int b;} * x = func_args->arg_info;\n    int n1 = x->a;\n    int n3 = x->b;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns122_inner(n1,n3);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s174": {
+        "inner": "void s174_inner(int M){\n    for (int nl = 0; nl < 10*(100000); nl++) {\n        for (int i = 0; i < M; i++) {\n            a[i+M] = a[i] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s174, &(struct{int a;}){(32000)/2});;",
+        "main": "extern void s174_inner(int);\nfloat s174(struct args_t * func_args)\n{\n\n//    symbolics\n//    loop with subscript that may seem ambiguous\n\n    int M = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns174_inner(M);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s172": {
+        "inner": "void s172_inner(int n1, int n3){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = n1-1; i < (32000); i += n3) {\n            a[i] += b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s172, &(struct{int a;int b;}){n1, n3});;",
+        "main": "extern void s172_inner(int, int);\nfloat s172(struct args_t * func_args)\n{\n//    symbolics\n//    vectorizable if n3 .ne. 0\n\n    struct{int a;int b;} * x = func_args->arg_info;\n    int n1 = x->a;\n    int n3 = x->b;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns172_inner(n1, n3);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s311": {
+        "inner": "void s311_inner(){\n    float sum;\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        sum = (float)0.;\n        for (int i = 0; i < (32000); i++) {\n            sum += a[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, sum);\n    }\n}",
+        "time_func": "time_function(&s311, NULL);;",
+        "main": "extern void s311_inner();\nfloat s311(struct args_t * func_args)\n{\n\n//    reductions\n//    sum reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns311_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s175": {
+        "inner": "void s175_inner(int inc){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i += inc) {\n            a[i] = a[i + inc] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s175, &n1);;",
+        "main": "extern void s175_inner(int);\nfloat s175(struct args_t * func_args)\n{\n\n//    symbolics\n//    symbolic dependence tests\n\n    int inc = *(int*)func_args->arg_info;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns175_inner(inc);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1281": {
+        "inner": "void s1281_inner(){\n    float x;\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            x = b[i]*c[i] + a[i]*d[i] + e[i];\n            a[i] = x-(float)1.0;\n            b[i] = x;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1281, NULL);;",
+        "main": "extern void s1281_inner();\nfloat s1281(struct args_t * func_args)\n{\n\n//    crossing thresholds\n//    index set splitting\n//    reverse data access\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1281_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s173": {
+        "inner": "void s173_inner(){\n    int k = (32000)/2;\n    for (int nl = 0; nl < 10*(100000); nl++) {\n        for (int i = 0; i < (32000)/2; i++) {\n            a[i+k] = a[i] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s173, NULL);;",
+        "main": "extern void s173_inner();\nfloat s173(struct args_t * func_args)\n{\n//    symbolics\n//    expression in loop bounds and subscripts\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns173_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s261": {
+        "inner": "void s261_inner(){\n    float t;\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 1; i < (32000); ++i) {\n            t = a[i] + b[i];\n            a[i] = t + c[i-1];\n            t = c[i] * d[i];\n            c[i] = t;\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s261, NULL);;",
+        "main": "extern void s261_inner();\nfloat s261(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    wrap-around scalar under an if\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns261_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s127": {
+        "inner": "void s127_inner(){\n    int j;\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000)/2; i++) {\n            j++;\n            a[j] = b[i] + c[i] * d[i];\n            j++;\n            a[j] = b[i] + d[i] * e[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s127, NULL);;",
+        "main": "extern void s127_inner();\nfloat s127(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    induction variable with multiple increments\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns127_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s4117": {
+        "inner": "void s4117_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = b[i] + c[i/2] * d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s4117, NULL);;",
+        "main": "extern void s4117_inner();\nfloat s4117(struct args_t * func_args)\n{\n\n//    indirect addressing\n//    seq function\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns4117_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s242": {
+        "inner": "void s242_inner(int s1, int s2){\n    for (int nl = 0; nl < (100000)/5; nl++) {\n        for (int i = 1; i < (32000); ++i) {\n            a[i] = a[i - 1] + s1 + s2 + b[i] + c[i] + d[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s242, &(struct{float a;float b;}){s1, s2});;",
+        "main": "extern void s242_inner(int, int);\nfloat s242(struct args_t * func_args)\n{\n\n//    node splitting\n\n    struct{float a;float b;} * x = func_args->arg_info;\n    float s1 = x->a;\n    float s2 = x->b;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns242_inner(s1, s2);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s255": {
+        "inner": "void s255_inner(){\n    float x, y;\n    for (int nl = 0; nl < (100000); nl++) {\n        x = b[(32000)-1];\n        y = b[(32000)-2];\n        for (int i = 0; i < (32000); i++) {\n            a[i] = (b[i] + x + y) * (float).333;\n            y = x;\n            x = b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s255, NULL);;",
+        "main": "extern void s255_inner();\nfloat s255(struct args_t * func_args)\n{\n\n//    scalar and array expansion\n//    carry around variables, 2 levels\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns255_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s000": {
+        "inner": "void s000_inner(){\n    for (int nl = 0; nl < 2*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = b[i] + 1;\n        }\n        dummy((float*)a, (float*)b, (float*)c, (float*)d, (float*)e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s000, NULL);;",
+        "main": "extern void s000_inner();\nfloat s000(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    no dependence - vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns000_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s3110": {
+        "inner": "float s3110_inner(){\n    int xindex, yindex;\n    float max, chksum;\n    for (int nl = 0; nl < 100*((100000)/((256))); nl++) {\n        max = aa[(0)][0];\n        xindex = 0;\n        yindex = 0;\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                if (aa[i][j] > max) {\n                    max = aa[i][j];\n                    xindex = i;\n                    yindex = j;\n                }\n            }\n        }\n        chksum = max + (float) xindex + (float) yindex;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return max + xindex+1 + yindex+1;\n}",
+        "time_func": "time_function(&s3110, NULL);;",
+        "main": "extern float s3110_inner();\nfloat s3110(struct args_t * func_args)\n{\n\n//    reductions\n//    if to max with index reductio 2 dimensions\n//    similar to S315\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s3110_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s125": {
+        "inner": "void s125_inner(){\n    int k;\n    for (int nl = 0; nl < 100*((100000)/((256))); nl++) {\n        k = -1;\n        for (int i = 0; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                k++;\n                flat_2d_array[k] = aa[i][j] + bb[i][j] * cc[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s125, NULL);;",
+        "main": "extern void s125_inner();\nfloat s125(struct args_t * func_args)\n{\n\n//    induction variable recognition\n//    induction variable in two loops; collapsing possible\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns125_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s118": {
+        "inner": "void s118_inner(){\n    for (int nl = 0; nl < 200*((100000)/(256)); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 0; j <= i - 1; j++) {\n                a[i] += bb[j][i] * a[i-j-1];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s118, NULL);;",
+        "main": "extern void s118_inner();\nfloat s118(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    potential dot product recursion\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns118_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s316": {
+        "inner": "float s316_inner(){\n    float x;\n    for (int nl = 0; nl < (100000)*5; nl++) {\n        x = a[0];\n        for (int i = 1; i < (32000); ++i) {\n            if (a[i] < x) {\n                x = a[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, x);\n    }\n    return x;\n}",
+        "time_func": "time_function(&s316, NULL);;",
+        "main": "extern float s316_inner();\nfloat s316(struct args_t * func_args)\n{\n\n//    reductions\n//    if to min reduction\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s316_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s271": {
+        "inner": "void s271_inner(){\n    for (int nl = 0; nl < 4*(100000); nl++) {\n        for (int i = 0; i < (32000); i++) {\n            if (b[i] > (float)0.) {\n                a[i] += b[i] * c[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s271, NULL);;",
+        "main": "extern void s271_inner();\nfloat s271(struct args_t * func_args)\n{\n\n//    control flow\n//    loop with singularity handling\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns271_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s431": {
+        "inner": "void s431_inner(int k){\n    for (int nl = 0; nl < (100000)*10; nl++) {\n        for (int i = 0; i < (32000); i++) {\n            a[i] = a[i+k] + b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s431, NULL);;",
+        "main": "extern void s431_inner(int);\nfloat s431(struct args_t * func_args)\n{\n\n//    parameters\n//    parameter statement\n\n    int k1=1;\n    int k2=2;\n    int k=2*k1-k2;\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns431_inner(k);\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s233": {
+        "inner": "void s233_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 1; j < (256); j++) {\n                aa[j][i] = aa[j-1][i] + cc[j][i];\n            }\n            for (int j = 1; j < (256); j++) {\n                bb[j][i] = bb[j][i-1] + cc[j][i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s233, NULL);;",
+        "main": "extern void s233_inner();\nfloat s233(struct args_t * func_args)\n{\n\n//    loop interchange\n//    interchanging with one of two inner loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns233_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s331": {
+        "inner": "int s331_inner(){\n    int j;\n    float chksum;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000); i++) {\n            if (a[i] < (float)0.) {\n                j = i;\n            }\n        }\n        chksum = (float) j;\n        dummy(a, b, c, d, e, aa, bb, cc, chksum);\n    }\n    return j+1;\n}",
+        "time_func": "time_function(&s331, NULL);;",
+        "main": "extern int s331_inner();\nfloat s331(struct args_t * func_args)\n{\n\n//    search loops\n//    if to last-1\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    int result;\nresult = s331_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "s1119": {
+        "inner": "void s1119_inner(){\n    for (int nl = 0; nl < 200*((100000)/((256))); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 0; j < (256); j++) {\n                aa[i][j] = aa[i-1][j] + bb[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s1119, NULL);;",
+        "main": "extern void s1119_inner();\nfloat s1119(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    no dependence - vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1119_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s176": {
+        "inner": "void s176_inner(){\n    int m = (32000)/2;\n    for (int nl = 0; nl < 4*((100000)/(32000)); nl++) {\n        for (int j = 0; j < ((32000)/2); j++) {\n            for (int i = 0; i < m; i++) {\n                a[i] += b[i+m-j-1] * c[j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s176, NULL);;",
+        "main": "extern void s176_inner();\nfloat s176(struct args_t * func_args)\n{\n\n//    symbolics\n//    convolution\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns176_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s231": {
+        "inner": "void s231_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int i = 0; i < (256); ++i) {\n            for (int j = 1; j < (256); j++) {\n                aa[j][i] = aa[j - 1][i] + bb[j][i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s231, NULL);;",
+        "main": "extern void s231_inner();\nfloat s231(struct args_t * func_args)\n{\n//    loop interchange\n//    loop with data dependency\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns231_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s1232": {
+        "inner": "void s1232_inner(){\n    for (int nl = 0; nl < 100*((100000)/(256)); nl++) {\n        for (int j = 0; j < (256); j++) {\n            for (int i = j; i < (256); i++) {\n                aa[i][j] = bb[i][j] + cc[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 1.);\n    }\n}",
+        "time_func": "time_function(&s1232, NULL);;",
+        "main": "extern void s1232_inner();\nfloat s1232(struct args_t * func_args)\n{\n\n//    loop interchange\n//    interchanging of triangular loops\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns1232_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s119": {
+        "inner": "void s119_inner(){\n    for (int nl = 0; nl < 200*((100000)/((256))); nl++) {\n        for (int i = 1; i < (256); i++) {\n            for (int j = 1; j < (256); j++) {\n                aa[i][j] = aa[i-1][j-1] + bb[i][j];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s119, NULL);;",
+        "main": "extern void s119_inner();\nfloat s119(struct args_t * func_args)\n{\n\n//    linear dependence testing\n//    no dependence - vectorizable\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns119_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s341": {
+        "inner": "void s341_inner(){\n    int j;\n    for (int nl = 0; nl < (100000); nl++) {\n        j = -1;\n        for (int i = 0; i < (32000); i++) {\n            if (b[i] > (float)0.) {\n                j++;\n                a[j] = b[i];\n            }\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s341, NULL);;",
+        "main": "extern void s341_inner();\nfloat s341(struct args_t * func_args)\n{\n\n//    packing\n//    pack positive values\n//    not vectorizable, value of j in unknown at each iteration\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns341_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s2244": {
+        "inner": "void s2244_inner(){\n    for (int nl = 0; nl < (100000); nl++) {\n        for (int i = 0; i < (32000)-1; i++) {\n            a[i+1] = b[i] + e[i];\n            a[i] = b[i] + c[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, 0.);\n    }\n}",
+        "time_func": "time_function(&s2244, NULL);;",
+        "main": "extern void s2244_inner();\nfloat s2244(struct args_t * func_args)\n{\n\n//    node splitting\n//    cycle with ture and anti dependency\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\ns2244_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return calc_checksum(__func__);\n}",
+        "need_before": ""
+    },
+    "s313": {
+        "inner": "float s313_inner(){\n    float dot;\n    for (int nl = 0; nl < (100000)*5; nl++) {\n        dot = (float)0.;\n        for (int i = 0; i < (32000); i++) {\n            dot += a[i] * b[i];\n        }\n        dummy(a, b, c, d, e, aa, bb, cc, dot);\n    }\n    return dot;\n}",
+        "time_func": "time_function(&s313, NULL);;",
+        "main": "extern float s313_inner();\nfloat s313(struct args_t * func_args)\n{\n\n//    reductions\n//    dot product\n\n    initialise_arrays(__func__);\n    gettimeofday(&func_args->t1, NULL);\n    float result;\nresult = s313_inner();\n\n    gettimeofday(&func_args->t2, NULL);\n    return result;\n}",
+        "need_before": ""
+    },
+    "list": [
+        "s2101",
+        "s1279",
+        "s319",
+        "s115",
+        "s132",
+        "s4121",
+        "s272",
+        "s235",
+        "s4114",
+        "s152",
+        "s128",
+        "s126",
+        "s31111",
+        "s278",
+        "s2711",
+        "s453",
+        "s441",
+        "s1251",
+        "s257",
+        "s244",
+        "s113",
+        "s124",
+        "s221",
+        "s3113",
+        "vpvtv",
+        "s141",
+        "s2710",
+        "s443",
+        "s123",
+        "s293",
+        "s252",
+        "s222",
+        "s3111",
+        "s253",
+        "s131",
+        "s112",
+        "vpvpv",
+        "s258",
+        "s2275",
+        "s111",
+        "s171",
+        "vbor",
+        "s1115",
+        "s452",
+        "s114",
+        "s3251",
+        "s1112",
+        "s4113",
+        "s116",
+        "s4116",
+        "s256",
+        "s276",
+        "s423",
+        "vtv",
+        "s121",
+        "s251",
+        "s343",
+        "s1113",
+        "s279",
+        "s1421",
+        "s1111",
+        "s353",
+        "s232",
+        "s332",
+        "s481",
+        "s151",
+        "s351",
+        "s273",
+        "s3112",
+        "s1221",
+        "s13110",
+        "s442",
+        "s243",
+        "s2111",
+        "s312",
+        "s241",
+        "s491",
+        "s422",
+        "s212",
+        "s323",
+        "s2712",
+        "vif",
+        "s421",
+        "s274",
+        "s321",
+        "s292",
+        "vpvts",
+        "s451",
+        "vtvtv",
+        "s2233",
+        "va",
+        "s317",
+        "s482",
+        "vas",
+        "s2102",
+        "s254",
+        "s277",
+        "s424",
+        "s1161",
+        "vag",
+        "s314",
+        "s281",
+        "s1213",
+        "s2251",
+        "s4112",
+        "vdotr",
+        "s161",
+        "s211",
+        "s291",
+        "s318",
+        "s322",
+        "vsumr",
+        "s315",
+        "s4115",
+        "s275",
+        "vpv",
+        "s1244",
+        "s352",
+        "s471",
+        "s1351",
+        "s162",
+        "s342",
+        "s122",
+        "s174",
+        "s172",
+        "s311",
+        "s175",
+        "s1281",
+        "s173",
+        "s261",
+        "s127",
+        "s4117",
+        "s242",
+        "s255",
+        "s000",
+        "s3110",
+        "s125",
+        "s118",
+        "s316",
+        "s271",
+        "s431",
+        "s233",
+        "s331",
+        "s1119",
+        "s176",
+        "s231",
+        "s1232",
+        "s119",
+        "s341",
+        "s2244",
+        "s313"
+    ]
+}

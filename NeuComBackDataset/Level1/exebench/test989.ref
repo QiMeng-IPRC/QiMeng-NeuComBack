@@ -1,0 +1,1 @@
+{"me": {"RejectSiteLaser": 8, "_state": 108, "_trigger": 0, "inputEvents": {"event": {"LasersChanged": 56, "RejectCanister": 105}}, "outputEvents": {"event": {"GoRejectArm": 0}}}}

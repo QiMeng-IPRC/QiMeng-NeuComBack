@@ -1,0 +1,1 @@
+{"CTL_CMD_ABORTED": 101, "SCSI_STATUS_TASK_ABORTED": 22, "ctsio": {"io_hdr": {"status": 101}, "scsi_status": 22, "sense_len": 0}}

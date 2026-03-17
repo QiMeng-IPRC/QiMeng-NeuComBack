@@ -1,0 +1,1 @@
+{"DMA2CNT": 99, "DMA2CONbits": {"AMODE": 1, "CHEN": 1, "MODE": 1}, "DMA2REQbits": {"FORCE": 1}, "DMA2STA": 125, "DMA3CNT": 99, "DMA3CONbits": {"AMODE": 0, "CHEN": 1, "MODE": 1}, "DMA3STA": 53, "SD_DMA_TXBuffer": 255, "card": {"TXBufferOffset": 125}, "data": {"BlockLen": 100, "DMAOffset": 44, "StartOffset": 9}}

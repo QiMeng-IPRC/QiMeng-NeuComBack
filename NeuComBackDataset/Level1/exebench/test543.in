@@ -1,0 +1,1 @@
+{"pmpriv": 91, "cmd": {"size": 109, "params": {"antenna": {"antenna_mode": 4, "action": 82}}, "command": 48}, "cmd_action": 116, "pdata_buf": [30, 47, 5, 117, 9, 65, 84, 9, 71, 72, 2, 106, 81, 85, 74, 74, 122, 40, 25, 75, 70, 99, 103, 87, 78, 51, 87, 119, 119, 67, 111, 78], "MLAN_STATUS_SUCCESS": 36}

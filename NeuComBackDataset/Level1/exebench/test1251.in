@@ -1,0 +1,1 @@
+{"tr": {"thoroughInsertion": 32, "likelihood": 17, "lhDEC": 32, "lhCutoff": 110, "lhAVG": 100, "ckp": {"tr_lhCutoff": 48, "tr_lhAVG": 64, "tr_lhDEC": 69, "tr_itCount": 4, "tr_doCutoff": 124, "tr_likelihood": 3, "tr_thoroughInsertion": 70, "tr_optimizeRateCategoryInvocations": 109}, "itCount": 15, "optimizeRateCategoryInvocations": 89, "doCutoff": 30}}

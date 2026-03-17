@@ -1,0 +1,1 @@
+{"p_tcb": {"trans_id": 14, "sr_cmd": {"status": 120, "trans_id": 65, "handle": 107, "op_code": 106}}, "op_code": 78, "handle": 58, "GATT_CMD_WRITE": 118, "GATT_HANDLE_VALUE_CONF": 24, "GATT_NOT_FOUND": 18, "GATT_REQ_MTU": 95, "GATT_SIGN_CMD_WRITE": 12, "GATT_TRANS_ID_MAX": 89}

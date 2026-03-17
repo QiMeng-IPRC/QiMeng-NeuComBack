@@ -1,0 +1,1 @@
+{"STATE_InjectorMotorController_MoveArmUp": 72, "me": {"_state": 72, "_trigger": 1, "inputEvents": {"event": {"ConveyorStoppedForInject": 0, "EmergencyStopChanged": 0, "InjectorArmFinishedMovement": 0, "PumpFinished": 0}}, "outputEvents": {"event": {"InjectDone": 0, "InjectRunning": 0, "InjectorPositionChanged": 0, "StartPump": 0}}}, "returnv": 0}

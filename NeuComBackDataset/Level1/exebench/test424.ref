@@ -1,0 +1,1 @@
+{"PERF_FORMAT_GROUP": 50, "PERF_TYPE_HARDWARE": 117, "pea_llc_miss": {"disabled": 1, "exclude_callchain_kernel": 1, "exclude_guest": 1, "exclude_hv": 1, "exclude_idle": 1, "exclude_kernel": 1, "inherit": 1, "read_format": 50, "size": 4, "type": 117}}

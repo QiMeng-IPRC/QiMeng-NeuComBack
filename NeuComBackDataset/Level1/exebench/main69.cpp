@@ -1,0 +1,78 @@
+#define NULL ((void*)0)
+typedef unsigned long size_t;  // Customize by platform.
+typedef long intptr_t; typedef unsigned long uintptr_t;
+typedef long scalar_t__;  // Either arithmetic or pointer type.
+/* By default, we understand bool (as a convenience). */
+
+
+/* Forward declarations */
+typedef  struct TYPE_4__   TYPE_1__ ;
+
+/* Type definitions */
+struct TYPE_4__ {int /*<<< orphan*/  type; } ;
+typedef  TYPE_1__ sarg_result ;
+typedef  int /*<<< orphan*/  sarg_opt_type ;
+
+/* Variables and functions */
+extern  int /*<<< orphan*/  memset (TYPE_1__*,int /*<<< orphan*/ ,int) ; 
+extern "C" { void _sarg_result_init(sarg_result *res, sarg_opt_type type);
+ }int memset__bench (TYPE_1__ * b, int d, int e) {
+	int returnv;
+	int temp_variable = 45;
+	returnv = temp_variable;
+	return returnv;
+}
+
+
+#include <vector>
+#include <nlohmann/json.hpp>
+#include <fstream>
+#include <iomanip>
+#include <clib/synthesizer.h>
+#include <time.h>
+#include <math.h>
+#include <iostream>
+char* output_file;
+char* pre_accel_dump_file;  // optional dump file.
+using json = nlohmann::json;
+const char* __asan_default_options() {
+  return "detect_leaks=0";
+}
+
+clock_t AcceleratorStart;
+clock_t AcceleratorTotalNanos = 0;
+void StartAcceleratorTimer() {
+  AcceleratorStart = clock();
+}
+
+void StopAcceleratorTimer() {
+  AcceleratorTotalNanos += (clock()) - AcceleratorStart;
+}
+
+void write_output(TYPE_1__* res, int type) {
+  json output_json;
+  TYPE_1__ output_temp_1 = *res;
+  json output_temp_2;
+
+  output_temp_2["type"] = output_temp_1.type;
+  output_json["res"] = output_temp_2;
+  std::ofstream out_str(output_file);
+  out_str << std::setw(4) << output_json << std::endl;
+}
+int main(int argc, char** argv) {
+  char* inpname = argv[1];
+  output_file = argv[2];
+
+  std::ifstream ifs(inpname);
+  json input_json = json::parse(ifs);
+  int res_pointer__type = input_json["res"]["type"];
+  TYPE_1__ res_pointer = {res_pointer__type};
+  TYPE_1__* res = &res_pointer;
+  int type = input_json["type"];
+  clock_t begin = clock();
+  _sarg_result_init(res, type);
+  clock_t end = clock();
+  std::cout << "Time: " << (double)(end - begin) / CLOCKS_PER_SEC << std::endl;
+  std::cout << "AccTime: " << (double)AcceleratorTotalNanos / CLOCKS_PER_SEC << std::endl;
+  write_output(res, type);
+}

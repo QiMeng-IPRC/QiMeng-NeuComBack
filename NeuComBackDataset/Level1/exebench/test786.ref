@@ -1,0 +1,1 @@
+{"op_fetchintrrpt": 20, "op_forintrrpt": 84, "op_startintrrpt": 96, "outofband": 64, "tptimeout": 64, "xf_forchk1": 546, "xf_forloop": 896, "xf_linefetch": 680, "xf_linestart": 172, "xf_zbfetch": 975, "xf_zbstart": 91, "xfer_table": [2, 122, 18, 85, 3, 86, 101, 93, 49, 54, 52, 48, 61, 117, 68, 11, 103, 53, 116, 120, 52, 98, 123, 16, 4, 57, 51, 42, 51, 43, 66, 88]}
